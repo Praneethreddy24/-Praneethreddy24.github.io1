@@ -1,0 +1,42 @@
+.cake-container {
+    position: relative;
+  }
+  
+  .knife {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  
+  .message {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    visibility: hidden;
+  }
+  
+  .cake-container:hover .message {
+    visibility: visible;
+  }
+  
+  .cake-container:active .knife {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  .cake-container:active .message {
+    visibility: visible;
+    animation: message 1s forwards;
+  }
+  
+  @keyframes message {
+    0% {
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg);
+      opacity: 1;
+    }
+  }
